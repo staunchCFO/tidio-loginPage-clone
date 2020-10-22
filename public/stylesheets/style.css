@@ -1,0 +1,212 @@
+body{
+  width: 100%;
+}
+/* Beginning of the landing page styles */
+.landing_btn{
+  background: #3f88f7;
+  border-radius: 3px;
+  border: 1px solid #3f88f7;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  outline: 0;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+  width: 70%;
+  margin-top: 120px;
+}
+.landing_btn:hover{
+  background: #3f88f7;
+  border-radius: 3px;
+  border: 1px solid #3f88f7;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  outline: 0;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+  width: 370px;
+  margin-left: 4px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+/* Ending of the landing page styles */
+
+/* Beginning of the Login page styles */
+.left-side-container{
+  background: #eff2f9;
+  text-align: center;
+  height: 100vh;
+
+}
+.left-side-content{
+  background: #eff2f9;
+  text-align: left;
+  height: 100vh;
+  padding-left: 5rem;
+
+}
+
+.account_text{
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #172b70;
+  padding-top: 10rem;
+  line-height: normal;
+
+}
+
+.left-content-btn{
+  background: inherit;
+  border-radius: 5px;
+  border: 2px solid rgb(231, 219, 219);
+  color: #1b2d6b;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  outline: 0;
+  padding: 20px 45px 20px 45px;
+  transition: all .2s ease-in-out;
+  width: 70%;
+  margin-top: 5rem;
+}
+.left-content-btn:hover{
+  text-decoration: none;
+  background:  #3f88f7;
+  border: 2px solid #3f88f7;
+  color: #fff
+}
+
+
+.right-side-container{
+  background: #ffffff;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.form_header{
+  font-size: 32px;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #172b70;
+
+}
+.google_btn{
+  background-color: #fff;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0 4px 16px 0 rgba(49,81,159,.16);
+  color: #DB4437;
+  cursor: pointer;
+  font-family: Muli,sans-serif;
+  font-size: 18px;
+  letter-spacing: .3px;
+  margin: 0 auto;
+  min-height: 50px;
+  min-width: 280px;
+  outline: 0;
+  overflow: hidden;
+  padding: 15px 23px 15px 75px;
+  position: relative;
+  transition: all .2s ease-in-out;
+  z-index: 2;
+}
+.google_btn:hover{
+  background-color: #DB4437;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0 4px 16px 0 rgba(49,81,159,.16);
+  color: #fff;
+  cursor: pointer;
+  font-family: Muli,sans-serif;
+  font-size: 18px;
+  letter-spacing: .3px;
+  margin: 0 auto;
+  min-height: 50px;
+  min-width: 280px;
+  outline: 0;
+  overflow: hidden;
+  padding: 15px 23px 15px 75px;
+  position: relative;
+  transition: all .2s ease-in-out;
+  z-index: 2;
+  text-decoration: none;
+}
+/* .google_btn::before{
+  background-color: #1977f3;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 224px;
+  left: -173px;
+  position: absolute;
+  top: -87px;
+  transition: all .3s ease-in-out .1s;
+  width: 224px;
+  z-index: -1;
+} */
+/* .form_spacer{
+  align-content: center;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAU0lEQVR4AWL8////k3cfvggDOhAHA4CBGIq+2t1/z7OVfCvjCSlzbAv/e7KmnA8b0hnbOAHLsnCfJ7OxgdTGMsaZfVuaT6xSW5dztkAbZ459pV8F6/Yk2x+LrW8AAAAASUVORK5CYII=) repeat-x;
+  background-position-y: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px 0;
+  max-width: 376px;
+  width: 100%;
+}
+.form_spacerLabel{
+  background-color: #fff;
+  border-left: 12px solid #fff;
+  border-right: 12px solid #fff;
+  color: #687794;
+  display: inline-block;
+  font-size: 14px;
+} */
+.login_form{
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #d8d7dc;
+  color: #172b70;
+  font-size: 18px;
+  padding: 22px 18px 20px;
+  width: 370px;
+}
+.login_form:focus{
+  border: 1px solid #3f88f7;
+  box-shadow: 0 0 0 1px #3f88f7;
+  outline: 0;
+}
+.login_form:active{
+  border: 1px solid #3f88f7;
+  box-shadow: 0 0 0 1px #3f88f7;
+  outline: 0;
+}
+.form_button{
+  background: #3f88f7;
+  border-radius: 3px;
+  border: 1px solid #3f88f7;
+  margin-top: 2rem;
+  color: #fff;
+  cursor: pointer;
+  /* 
+  font-size: 18px;
+  padding: 22px 18px 20px 18px;
+  max-width: 370px; */
+}
+.form__pageLink--inFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 49px;
+}
+.form__pageLink {
+  color: #687794;
+  font-weight: 300;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+}
