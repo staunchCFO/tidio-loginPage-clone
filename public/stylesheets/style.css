@@ -198,6 +198,10 @@ body{
   padding: 22px 18px 20px 18px;
   max-width: 370px; */
 }
+.form__button:hover {
+  background: #2f78e9;
+  border-color: #2f78e9;
+}
 .form__pageLink--inFooter {
   display: flex;
   flex-direction: row;

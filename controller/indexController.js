@@ -20,6 +20,16 @@ class App {
             console.log(error)
         }
     }
+    getCreateAccountPage = (req , res , next) => {
+        try {
+            res.render(
+                'register' ,
+                {title : "Create a free account with Google or Email"})
+        } catch (error) {
+            res.render('error-page' , {error : error})
+            console.log(error)
+        }
+    }
 
     postLogin = async (req, res, next) => {
         try{
@@ -42,6 +52,7 @@ class App {
             console.log(error)
         }
     }
+    
 }
 
 const returnApp = new App()
