@@ -5,12 +5,14 @@ block content
       div(class="container-fluid")
         div(class="row")
             div(class="col-lg-5 left-side-content")
-                p.account_text.pb-4 Don't
-                    br 
-                    | have an 
-                    br
-                    | account?
-                a(href='/register' class="left-content-btn mt-5") Creat a Free Account
+                img(src='/images/tidio.svg' width='120px' height='40px' class='mt-5')
+                div.left
+                    p.account_text.pb-4 Don't
+                        br 
+                        | have an 
+                        br
+                        | account?
+                    a(href='/register' class="left-content-btn mt-5") Creat a Free Account
             div(class="col-lg-7")
               .row
                 div(class="col-2")
@@ -23,12 +25,23 @@ block content
                           a(href="/auth/google/" class="google_btn mt-4" width="20px") Login with Google
                         div.form_spacer.mt-5
                             span(class="form_spacerLabel text-center form__pageLink form__pageLink--inFooter") or
-                        form(method="POST" class="mt-4")
+                        form(method="POST" class="mt-4 text-center")
+                          
                           input(type="text" name="userName" placeholder="Email" class="login_form input-control input_text" id="userName") 
-                          input(type="password" name="password" placeholder="Password" class="login_form input-control mt-3 input_text" id="password") 
-                          div(class="form_button mb-5")
+                          div(class='input-group' id='show_hide_password')
+                            input(type="password" name="password" placeholder="Password" class="login_form input-control mt-3 input_text" id="password")
+                            div.input-group-addon
+                                a(href='')
+                                    i(class='fa fa-eye-slash ' arai-hidden='true')
+                          span.formAlert.form-alertError
+                          div(class=" mb-5")
                             button(type="submit" class="form_button mt-4") Login
                         
                         a(class="form__pageLink form__pageLink--inFooter" href="/panel/forgot-password") Forgot password?
                            
                 div(class="col-2")
+    
+        script(src="/javascripts/jquery.min.js")
+        script(src="/javascripts/showPassword.js")
+
+                

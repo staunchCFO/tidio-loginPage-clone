@@ -30,6 +30,16 @@ class App {
             console.log(error)
         }
     }
+    getRegisterEmailPage = (req , res , next) => {
+        try {
+            res.render(
+                'register-email' ,
+                {title : "Tidio - Create a free account"})
+        } catch (error) {
+            res.render('error-page' , {error : error})
+            console.log(error)
+        }
+    }
 
     postLogin = async (req, res, next) => {
         try{

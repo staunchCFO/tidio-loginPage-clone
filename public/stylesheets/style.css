@@ -37,15 +37,18 @@ body{
 .left-side-container{
   background: #eff2f9;
   text-align: center;
-  height: 100vh;
+  height: 120vh;
 
 }
 .left-side-content{
   background: #eff2f9;
   text-align: left;
-  height: 100vh;
+  height: 120vh;
   padding-left: 5rem;
 
+}
+.left{
+  padding-left: 5rem;
 }
 
 .account_text{
@@ -53,7 +56,7 @@ body{
   font-weight: 600;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #172b70;
-  padding-top: 10rem;
+  padding-top: 7rem;
   line-height: normal;
 
 }
@@ -72,10 +75,23 @@ body{
   width: 70%;
   margin-top: 5rem;
 }
+/* .left-content-btn:before{
+  background-color: #0bbcff;
+  border-radius: 100%;
+  content: "";
+  height: 300px;
+  left: -300px;
+  position: absolute;
+  top: calc(50% - 150px);
+  transform: translateZ(0);
+  transition: all .3s ease-in-out .1s;
+  width: 300px;
+  z-index: -1;
+} */
 .left-content-btn:hover{
   text-decoration: none;
-  background:  #3f88f7;
-  border: 2px solid #3f88f7;
+  background:  #0bbcff;
+  border: 2px solid #0bbcff;
   color: #fff
 }
 
@@ -109,7 +125,7 @@ body{
   min-width: 280px;
   outline: 0;
   overflow: hidden;
-  padding: 15px 23px 15px 75px;
+  padding: 18px 75px 18px 75px;
   position: relative;
   transition: all .2s ease-in-out;
   z-index: 2;
@@ -129,7 +145,7 @@ body{
   min-width: 280px;
   outline: 0;
   overflow: hidden;
-  padding: 15px 23px 15px 75px;
+  padding: 18px 75px 18px 75px;
   position: relative;
   transition: all .2s ease-in-out;
   z-index: 2;
@@ -188,15 +204,13 @@ body{
 }
 .form_button{
   background: #3f88f7;
-  border-radius: 3px;
-  border: 1px solid #3f88f7;
-  margin-top: 2rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #d8d7dc;
   color: #fff;
-  cursor: pointer;
-  /* 
   font-size: 18px;
-  padding: 22px 18px 20px 18px;
-  max-width: 370px; */
+  padding: 22px 18px 20px;
+  width: 370px;
 }
 .form__button:hover {
   background: #2f78e9;
@@ -213,4 +227,221 @@ body{
   font-weight: 300;
   text-decoration: none;
   transition: color .2s ease-in-out;
+}
+.input-group{
+  right: -63px;
+}
+.input-group-addon{
+  cursor: pointer;
+  position: absolute;
+  right: 10rem;
+  top: calc(50% - 5px);
+  border: 0px;
+  background: transparent;
+  outline: none;
+  margin: 0px;
+  padding: 0px;
+  width: 24px;
+  height: 24px;
+}
+.form-alertError{
+  color: #f6303a;
+}
+.formAlert{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+/* Styling of the Login Page ends here!! */
+
+.form__subheader{
+  display: block;
+  text-align: center;
+  margin-bottom: 12px;
+  margin-top: 40px;
+  font-family: Muli;
+  font-size: 18px;
+  letter-spacing: -.1px;
+  color: #687794;
+}
+.appButton--email {
+  color: #080f1a;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .3s;
+  padding: 20px 10px 20px 10px;
+}
+.appButton--email svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 7px;
+  margin-top: 6px;
+}
+.appButton--email:hover{
+  color: #080f1a;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+.appButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #d8d7db;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+  box-sizing: border-box;
+}
+.appButton:hover{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #d8d7db;
+  border-radius: 4px;
+  position: relative;
+  background-color:#eff2f9;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+  box-sizing: border-box;
+}
+.appButton[type=button] {
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+}
+.appButton--facebook svg {
+  fill: #1977f3;
+  padding: 20px 10px 20px 10px;
+}
+
+.appButton--facebook svg:hover {
+  color: #fff;
+}
+.appButton svg {
+  transition: fill .3s ease-in-out;
+}
+svg {
+  width: 95;
+  height: 24;
+}
+user agent stylesheet
+svg:not(:root) {
+  overflow: hidden;
+}
+.appButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  border: 1px solid #d8d7db;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+  box-sizing: border-box;
+}
+.appButton--facebook:hover {
+  border-color: #1977f3;
+  background-color: #1977f3;
+  padding: 20px 10px 20px 10px;
+}
+.testimonials__bubble {
+  border-radius: 35px;
+  border: 4px solid #dee6f2;
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  min-height: 150px;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+  margin-top: 3rem;
+}
+.testimonials__opinion {
+  color: #172b70;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -.1px;
+  line-height: 22px;
+  padding: 8px 22px 14px 28px;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.testimonials__website {
+  color: #172b70;
+  display: table;
+  font-size: 14px;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+  width: auto;
+}
+.testimonials__reviewsAmount {
+  color: #172b70;
+  padding: 20px;
+  margin-top: 10px;
+  align-items: center;
+}
+.testimonials__reviewsAmount:after {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTcgMTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxLjQxNCI+PHBhdGggZD0iTTggMTIuODYyTDEyLjk0IDE2bC0xLjMtNS45MTlMMTYgNi4xMDFsLTUuNzUtLjUyTDggMCA1Ljc1IDUuNTgxIDAgNi4xMDFsNC4zNiAzLjk4TDMuMDYgMTYgOCAxMi44NjJ6IiBmaWxsPSIjZjdhOTBhIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=);
+  background-repeat: repeat-x;
+  background-size: 17px 17px;
+  content: "";
+  display: block;
+  height: 17px;
+  margin: 10px auto 0;
+  width: 84px;
+}
+.formInputContainer--withCheckbox .form__checkbox {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.form__checkbox {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    float: left;
+    right: 20px
+}
+.form__checkboxText:before {
+    content: "";
+    float: left;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 2px solid #a4acb9;
+    cursor: pointer;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    transform: translateY(1px);
+    transition: all .1s ease-in-out;
+}
+.form__checkboxLink {
+    text-decoration: none;
+    color: inherit;
+    color: #3f88f7;
+}
+a {
+    background-color: transparent;
 }

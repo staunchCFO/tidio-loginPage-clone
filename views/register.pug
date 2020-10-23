@@ -5,28 +5,52 @@ block content
       div(class="container-fluid")
         div(class="row")
             div(class="col-lg-5 left-side-content")
-                p.account_text.pb-4 Don't
-                    br 
-                    | have an 
-                    br
-                    | account?
-                a(href='' class="left-content-btn mt-5") Creat a Free Account
+                img(src='/images/tidio.svg' width='120px' height='40px' class='mt-5')
+                div
+                    .testimonials__bubble
+                      p.testimonials__opinion
+                        | I have tested it for a while and it deliver on its promise. Simple to set up. Easy to use. And customers really want to chat, you can increase your sale with Tidio. And customer service is just one chat away
+                        span.testimonials__website videocation.no
+                      span.testimonials__reviewsAmount.text-center Over 900 positive reviews
             div(class="col-lg-7")
               .row
-                div(class="col-2")
-                div(class="col-8")
+                div(class="col-3")
+                div(class="col-6")
                     div(class="right-side-container")
                       div(class="form_container")
                         div(class="form_content")
-                        p(class="form_header pb-3 mt-4") Log In
-                        div.mt-3
-                          a(href="/auth/google/" class="google_btn mt-4" width="20px") Login with Google
-                        div.form_spacer.mt-5
-                            span(class="form_spacerLabel text-center form__pageLink form__pageLink--inFooter") or
-                        form(method="POST" class="mt-4")
-                          input(type="text" name="userName" placeholder="Email" class="login_form input-control input_text" id="userName") 
-                          input(type="password" name="password" placeholder="Password" class="login_form input-control mt-3 input_text" id="password") 
-                          div(class="form_button mb-5")
-                            button(type="submit" class="form_button mt-4") Login
+                        p(class="form_header pb-1 pt-4") Create a Free Account
+                        span(class="form__subheader") Register using your email address:
+                        a.appButton.appButton--email(href='/register-email')
+                          svg(xmlns='http://www.w3.org/2000/svg' width='23' height='17')
+                            defs
+                              lineargradient#a(gradientUnits='userSpaceOnUse' x1='.5' y1='.263' x2='.757' y2='.707' gradientTransform='matrix(7 0 0 13.90625 16 1.547)')
+                                stop(offset='0' stop-color='#ffa426')
+                                stop(offset='1' stop-color='#ffc246')
+                              lineargradient#c(gradientUnits='userSpaceOnUse' x1='.5' y1='-.216' x2='.5' y2='1' gradientTransform='matrix(21.5 0 0 10.8164 .5 0)')
+                                stop(offset='0' stop-color='#ffc246')
+                                stop(offset='1' stop-color='#ffda45')
+                              lineargradient#d(gradientUnits='userSpaceOnUse' x1='.5' y1='.245' x2='.208' y2='.766' gradientTransform='matrix(6.89844 0 0 13.4961 0 2.063)')
+                                stop(offset='0' stop-color='#ffa426')
+                                stop(offset='1' stop-color='#ffc246')
+                            path.white-hover(d='M23 1.547l-7 7.066 6.992 6.84c.004-.047-.008-.098-.008-.148V1.625c0-.027.016-.05.016-.078zm0 0' fill='url(#a)')
+                            path.white-hover(d='M14.75 9.79l-2.852 2.831a.73.73 0 01-1.027.012L8.027 9.789 1 16.777c.172.063.355.223.547.223h19.668c.285 0 .55-.09.785-.223zm0 0' fill='#FFAC2F')
+                            path.white-hover(d='M11.344 10.816L22 .246A1.58 1.58 0 0021.176 0H1.53C1.141 0 .781.156.5.395zm0 0' fill='url(#c)')
+                            path.white-hover(d='M0 2.063v13.496l6.898-6.711zm0 0' fill='url(#d)')
+                          | Email
+                        span.form__subheader or using the service below:
+                        div.mt-5
+                          a(href="/auth/google/" class="google_btn mt-4" width="20px") Register with Google
+                        span.form__subheader
+                          | Already have an account? 
+                          a.form__checkboxLink(href='/login') Log In
                         
-                        a(class="form__pageLink form__pageLink--inFooter" href="/panel/forgot-password") Forgot password?
+
+                div(class="col-3")
+    
+        script(src="/javascripts/jquery.min.js")
+        script(src="/javascripts/showPassword.js")
+
+                
+
+
