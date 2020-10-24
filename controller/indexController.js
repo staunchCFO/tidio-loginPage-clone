@@ -1,4 +1,6 @@
 const User = require("../model/user")
+const bcrypt = require('bcryptjs')
+const crypto = require("crypto");
 
 class App {
 
@@ -37,6 +39,34 @@ class App {
                 {title : "Tidio - Create a free account"})
         } catch (error) {
             res.render('error-page' , {error : error})
+            console.log(error)
+        }
+    }
+
+    postRegistration = async ( req, res, next ) => {
+        try{
+            const { username, email, password } = req.body
+            const checkUser = await User.find({ $or : [{email : email}, {username : username}]})
+            if(checkUser){
+                const hashedPassword = await bcrypt.hash(password , 10)
+                const newUser = await new User({
+                    email : email,
+                    username : username,
+                    password : hashedPassword,
+                    verificationToken : crypto.randomBytes(40).toString('hex')
+                })
+                const saveUser = await newUser.save()
+                if(saveUser){
+                    res.redirect(303, '/login')
+                }else{
+                    throw "Error saving this user."
+                }
+            }else{
+                throw "User has been created already."
+            }
+        }catch(error){
+            res.status(400)
+            res.json({message: error, status: 400})
             console.log(error)
         }
     }

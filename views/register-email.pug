@@ -23,10 +23,10 @@ block content
                         div.mt-3
                           span(class="form__subheader") Register using your email address:
                         form(method="POST" class="mt-4 text-center")
-                          input(type="text" name="userName" placeholder="Username" class="login_form input-control input_text" id="userName") 
-                          input(type="text" name="email" placeholder="Email" class="login_form input-control input_text mt-3" id="email") 
+                          input(type="text" name="username" placeholder="Username" class="validate login_form input-control input_text" id="username") 
+                          input(type="text" name="email" placeholder="Email" class="validate login_form input-control input_text mt-3" id="email") 
                           div(class='input-group' id='show_hide_password')
-                            input(type="password" name="password" placeholder="Password" class="login_form input-control mt-3 input_text" id="password")
+                            input(type="password" name="password" placeholder="Password" class="validate login_form input-control mt-3 input_text" id="password")
                             div.input-group-addon
                                 a(href='')
                                     i(class='fa fa-eye-slash ' arai-hidden='true')
@@ -35,9 +35,9 @@ block content
                             a.form__checkboxLink(href='https://www.tidio.com/terms' target='_blank' rel='noopener noreferrer') Terms & Conditions
                             
 
-                          span.formAlert.form-alertError
+                          p(class='formAlert form-alertError' id='response-register') #{error}
                           div(class=" mb-5")
-                            button(type="submit" class="form_button mt-4") Create a Free Account
+                            button(type="submit" class="form_button mt-4" id='register-submit') Create a Free Account
                         
                         span.form__subheader
                           | Already have an account? 
@@ -46,6 +46,7 @@ block content
                 div(class="col-2")
     
         script(src="/javascripts/jquery.min.js")
+        script(src="/javascripts/reg.js" type="module")
         script(src="/javascripts/showPassword.js")
 
                 

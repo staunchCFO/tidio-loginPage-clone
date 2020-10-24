@@ -397,7 +397,7 @@ p {
   color: #172b70;
   padding: 20px;
   margin-top: 10px;
-  align-items: center;
+  text-align: center !important;
 }
 .testimonials__reviewsAmount:after {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTcgMTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxLjQxNCI+PHBhdGggZD0iTTggMTIuODYyTDEyLjk0IDE2bC0xLjMtNS45MTlMMTYgNi4xMDFsLTUuNzUtLjUyTDggMCA1Ljc1IDUuNTgxIDAgNi4xMDFsNC4zNiAzLjk4TDMuMDYgMTYgOCAxMi44NjJ6IiBmaWxsPSIjZjdhOTBhIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=);
