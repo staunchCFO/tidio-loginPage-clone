@@ -22,6 +22,28 @@ class App {
             console.log(error)
         }
     }
+    postLogin = async (req, res, next) => {
+        try{
+            const {email, password } = req.body
+            const findUser = await User.findOne({email : email})
+            if(findUser){
+                let validUser = await bcrypt.compare(password , findUser.password)
+                if (validUser) {
+                    req.session.email = findUser.email
+                    res.redirect(303, '/dashboard')
+                    return
+                }else {
+                    res.render('login', {error: 'Invalid Login Credentials'})
+                }
+            }else {
+                res.render('login', {error: 'Invalid Login Credentials'})
+            }  
+        }catch(error){
+            res.json({error : error})
+            console.log(error)
+        }
+    }
+
     getCreateAccountPage = (req , res , next) => {
         try {
             res.render(
@@ -58,13 +80,14 @@ class App {
                 })
                 const saveUser = await newUser.save()
                 if(saveUser){
+                    
                     res.redirect(303, '/login')
                     console.log(saveUser)
                 }else{
                     throw "Error saving this user."
                 }
             }else{
-                res.render('register-email', {message: "A User already has this details"})
+                res.render('register-email', {message: "A User already has an account with this details..."})
             }
         }catch(error){
             res.status(400)
@@ -73,38 +96,35 @@ class App {
         }
     }
 
-    postLogin = async (req, res, next) => {
-        try{
-            const {email, password } = req.body
-            const User = await User.findOne({email : email})  
-            if(User){
-                let validUser = await bcrypt.compare(password , User.password)
-                if (validUser) {
-                    res.redirect(303, '/dashboard')
-                    return
+    
+    getDashboard = async (req , res , next) => {
+        try {
+            if(req.session.email){
+                const findUser = await User.findOne({email : req.session.email})
+                if(findUser){
+                    res.render('dashboard')
                 }else {
-                    res.render('login', {error: 'Invalid Credentials'})
+                    throw{
+                    message : 'Something is wrong with your session'
                 }
+            }
             }else {
-                res.render('login', {error: 'Invalid Credentials'})
-            }  
-        }catch(error){
-            res.render('error-page' , {error : error})
+                res.redirect(304 , '/login' )
+            }
+        } catch (error) {
             console.log(error)
         }
     }
 
-    getDashboard = async (req , res , next) => {
+    getLogout = (req , res , next ) => {
         try {
-            const findUser = await User.findOne({email : email})
-            if (findUser) {
-                res.render('dashboard')
-            } else {
-                throw{
-                    message : "Something is wrong"
-                }
+            if (req.session.email) {
+                delete req.session.email
+                res.redirect(303 , '/login')
+            }else {
+                throw new Error("Problem signing out. We will handle this shortly")
             }
-        } catch (error) {
+        }catch(error){
             res.render('error-page' , {error : error})
             console.log(error)
         }
