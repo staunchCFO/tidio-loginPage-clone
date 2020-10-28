@@ -47,7 +47,8 @@ class App {
         try{
             const { username, email, password } = req.body
             const checkUser = await User.find({ $or : [{email : email}, {username : username}]})
-            if(checkUser){
+            console.log(checkUser)
+            if(checkUser.length == 0){
                 const hashedPassword = await bcrypt.hash(password , 10)
                 const newUser = await new User({
                     email : email,
@@ -58,11 +59,12 @@ class App {
                 const saveUser = await newUser.save()
                 if(saveUser){
                     res.redirect(303, '/login')
+                    console.log(saveUser)
                 }else{
                     throw "Error saving this user."
                 }
             }else{
-                throw "User has been created already."
+                res.render('register-email', {message: "A User already has this details"})
             }
         }catch(error){
             res.status(400)
@@ -73,12 +75,11 @@ class App {
 
     postLogin = async (req, res, next) => {
         try{
-            const {email, password , username , phone} = req.body
-            const findUser = await User.findOne({email : email})  
-            if(findUser){
-                let validUser = await bcrypt.compare(password , findUser.password)
-                if (validUser) {   
-                    req.session.email = findUser.email
+            const {email, password } = req.body
+            const User = await User.findOne({email : email})  
+            if(User){
+                let validUser = await bcrypt.compare(password , User.password)
+                if (validUser) {
                     res.redirect(303, '/dashboard')
                     return
                 }else {
@@ -88,6 +89,22 @@ class App {
                 res.render('login', {error: 'Invalid Credentials'})
             }  
         }catch(error){
+            res.render('error-page' , {error : error})
+            console.log(error)
+        }
+    }
+
+    getDashboard = async (req , res , next) => {
+        try {
+            const findUser = await User.findOne({email : email})
+            if (findUser) {
+                res.render('dashboard')
+            } else {
+                throw{
+                    message : "Something is wrong"
+                }
+            }
+        } catch (error) {
             res.render('error-page' , {error : error})
             console.log(error)
         }

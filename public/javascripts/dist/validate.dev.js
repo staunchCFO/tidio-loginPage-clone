@@ -70,7 +70,7 @@ var validateEmail = function validateEmail(val) {
 exports.validateEmail = validateEmail;
 
 var validatePassword = function validatePassword(val) {
-  var passPattern = /[a-zA-Z0-9]{4}/;
+  var passPattern = /[a-zA-Z0-9]{6}/;
 
   try {
     if (String(val).match(passPattern)) {

@@ -57,7 +57,7 @@ export const validateEmail = (val) => {
  */
 
 export const validatePassword = (val) => {
-	let passPattern = /[a-zA-Z0-9]{4}/
+	let passPattern = /[a-zA-Z0-9]{6}/
 	try { 
 		if ( String(val).match(passPattern)) {
 	        return { 

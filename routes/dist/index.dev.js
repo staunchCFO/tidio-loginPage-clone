@@ -12,4 +12,6 @@ router.post('/login', IndexController.getLoginPage);
 router.get('/register', IndexController.getCreateAccountPage);
 router.get('/register-email', IndexController.getRegisterEmailPage);
 router.post('/register-email', IndexController.postRegistration);
+router.post('/login', IndexController.postLogin);
+router.get('/dashboard', IndexController.getDashboard);
 module.exports = router;

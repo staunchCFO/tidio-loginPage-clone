@@ -21,21 +21,22 @@ block content
                       div(class="form_container")
                         div(class="form_content")
                         p(class="form_header pb-3 mt-4") Log In
+                        if error 
+                          span.formAlert.form-alertError
                         div.mt-3
                           a(href="/auth/google/" class="google_btn mt-4" width="20px") Login with Google
                         div.form_spacer.mt-5
                             span(class="form_spacerLabel text-center form__pageLink form__pageLink--inFooter") or
                         form(method="POST" class="mt-4 text-center")
-                          
-                          input(type="text" name="userName" placeholder="Email" class="login_form input-control input_text" id="userName") 
+                          input(type="text" name="username" placeholder="Email" class="login_form input-control input_text" id="username") 
                           div(class='input-group' id='show_hide_password')
                             input(type="password" name="password" placeholder="Password" class="login_form input-control mt-3 input_text" id="password")
                             div.input-group-addon
                                 a(href='')
                                     i(class='fa fa-eye-slash ' arai-hidden='true')
-                          span.formAlert.form-alertError
+                          p(class='formAlert form-alertError' id='response-register') #{error}
                           div(class=" mb-5")
-                            button(type="submit" class="form_button mt-4") Login
+                            button(type="submit" class="form_button mt-4 validate") Login
                         
                         a(class="form__pageLink form__pageLink--inFooter" href="/panel/forgot-password") Forgot password?
                            

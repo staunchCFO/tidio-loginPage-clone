@@ -21,6 +21,8 @@ block content
                         div(class="form_content")
                         p(class="form_header pb-3 mt-4") Create a Free Account
                         div.mt-3
+                          if message
+                            span.formAlert.form-alertError #{message}
                           span(class="form__subheader") Register using your email address:
                         form(method="POST" class="mt-4 text-center")
                           input(type="text" name="username" placeholder="Username" class="validate login_form input-control input_text" id="username") 
@@ -31,13 +33,13 @@ block content
                                 a(href='')
                                     i(class='fa fa-eye-slash ' arai-hidden='true')
                           p.form__checkboxText
-                            | I agree to Tidio's 
+                            | I agree to have read Tidio's 
                             a.form__checkboxLink(href='https://www.tidio.com/terms' target='_blank' rel='noopener noreferrer') Terms & Conditions
                             
 
                           p(class='formAlert form-alertError' id='response-register') #{error}
                           div(class=" mb-5")
-                            button(type="submit" class="form_button mt-4" id='register-submit') Create a Free Account
+                            button(type="submit" class="form_button mt-4 validate" id='register-submit') Create a Free Account
                         
                         span.form__subheader
                           | Already have an account? 
@@ -45,8 +47,8 @@ block content
                            
                 div(class="col-2")
     
-        script(src="/javascripts/jquery.min.js")
-        script(src="/javascripts/reg.js" type="module")
-        script(src="/javascripts/showPassword.js")
+      script(src="/javascripts/jquery.min.js")
+      script(src="/javascripts/reg.js" type="module")
+      script(src="/javascripts/showPassword.js")
 
                 

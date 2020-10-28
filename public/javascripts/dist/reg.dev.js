@@ -17,7 +17,7 @@ var AccountModel = {
 var AccountView = function AccountView() {
   _classCallCheck(this, AccountView);
 
-  this.inputs = Array.from((0, _api.selectAll)(".validate"));
+  this.inputs = Array.from(document.querySelectorAll(".validate"));
 };
 
 var AccountController =
@@ -35,12 +35,14 @@ function () {
     key: "handleBlur",
     value: function handleBlur(event) {
       if (event.target.id === "username") {
-        if (event.target.value !== " " && event.target.value.trim().length > 0) {
+        if (event.target.value !== "" && event.target.value.trim().length > 0) {
           AccountModel.validFormValue["".concat(event.target.id)] = event.target.value;
-        }
+        } else {
+          AccountModel.validFormValue["".concat(event.target.id)] = "";
+        } // console.log(event.target.value)
+        // event.target.value = event.target.value 
+        // event.target.removeEventListener("focus" , this.handleBlur)
 
-        event.target.value = event.target.value;
-        event.target.removeEventListener("focus", this.handleBlur);
       }
 
       if (event.target.id === "email") {
@@ -65,41 +67,47 @@ function () {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       if (event.target.id === "register-submit") {
-        event.preventDefault();
+        console.log(AccountModel.validFormValue);
 
-        if (AccountModel.validFormValue.username && AccountModel.validFormValue.email && AccountModel.validFormValue.password) {
-          var dataToSend = {
-            username: AccountModel.validFormValue.username,
-            email: AccountModel.validFormValue.email,
-            password: AccountModel.validFormValue.password
-          };
-          (0, _api.sendData)("/register-api", dataToSend).then(function (res) {
-            console.log(res);
-
-            if (res.status > 200) {
-              (0, _api.selector)('#response-register').classList.remove('err-msg', 'success-msg');
-              (0, _api.selector)('#response-register').classList.add('err-msg');
-              (0, _api.selector)('#response-register').textContent = res.message;
-            } else {
-              (0, _api.selector)('#response-register').classList.remove('err-msg', 'success-msg');
-              (0, _api.selector)('#response-register').classList.add('success-msg');
-              (0, _api.selector)('#response-register').textContent = res.message;
-              setTimeout(function () {
-                window.location.reload(false);
-              }, 2000);
-            }
-          })["catch"](function (error) {
-            return console.log(error);
-          });
-        } else if (AccountModel.validFormValue.username && AccountModel.validFormValue.email) {
+        if ((0, _api.selector)("#username").value == "" && (0, _api.selector)("#email").value == "" && (0, _api.selector)("#password").value == "") {
+          event.preventDefault();
           (0, _api.selector)('#response-register').classList.remove('err-msg', 'success-msg');
           (0, _api.selector)('#response-register').classList.add('err-msg');
-          (0, _api.selector)('#response-register').textContent = "Password too weak or doesn't match.";
-        } else {
+          (0, _api.selector)('#response-register').textContent = "Please fill neccessary fields.";
+        } else if (!AccountModel.validFormValue.email) {
+          event.preventDefault();
           (0, _api.selector)('#response-register').classList.remove('err-msg', 'success-msg');
           (0, _api.selector)('#response-register').classList.add('err-msg');
-          (0, _api.selector)('#response-register').textContent = "Please fill in valid details.";
-        }
+          (0, _api.selector)('#response-register').textContent = "Please provide a valid mail.";
+        } else if (!AccountModel.validFormValue.password) {
+          event.preventDefault();
+          (0, _api.selector)('#response-register').classList.remove('err-msg', 'success-msg');
+          (0, _api.selector)('#response-register').classList.add('err-msg');
+          (0, _api.selector)('#response-register').textContent = "Password too weak, enter a minimun of 6 characters";
+        } else if (!AccountModel.validFormValue.username) {
+          event.preventDefault();
+          (0, _api.selector)('#response-register').classList.remove('err-msg', 'success-msg');
+          (0, _api.selector)('#response-register').classList.add('err-msg');
+          (0, _api.selector)('#response-register').textContent = "Please enter a Username";
+        } // if(!(AccountModel.validFormValue.username && AccountModel.validFormValue.email &&
+        //     AccountModel.validFormValue.password)){
+        //     event.preventDefault()
+        //         selector('#response-register').classList.remove('err-msg', 'success-msg')
+        //         selector('#response-register').classList.add('err-msg')
+        //         selector('#response-register').textContent = "Kindly fill all neccesary fields."
+        //         console.log(AccountModel.validFormValue.username)
+        //         console.log(AccountModel.validFormValue.email)
+        //         console.log(AccountModel.validFormValue.password)
+        // }else if(AccountModel.validFormValue.username && AccountModel.validFormValue.email){
+        //     selector('#response-register').classList.remove('err-msg', 'success-msg')
+        //     selector('#response-register').classList.add('err-msg')
+        //     selector('#response-register').textContent = "Password too weak, enter a minimun of 6 characters."    
+        // }else{
+        //     selector('#response-register').classList.remove('err-msg', 'success-msg')
+        //     selector('#response-register').classList.add('success-msg')
+        //     selector('#response-register').textContent = "Your account had been created successfully."
+        // }
+
       }
     }
   }, {
